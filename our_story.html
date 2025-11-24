@@ -25,32 +25,76 @@
   </head>
   <body class="bg-white text-gray-800 antialiased">
     <!-- Navbar -->
-    <nav class="bg-white border-default sticky top-0 z-50 shadow-xs">
+    <nav class="bg-white border-default sticky top-0 z-70 shadow-sm">
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2.5"
       >
+        <!-- Logo -->
         <a
           href="index.html"
           class="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img src="images/icons/cbvs_logo.png" class="h-12" alt="CBVS Logo" />
           <span
-            class="font-title self-center text-xl text-headings font-semibold whitespace-nowrap"
+            class="self-center text-xl text-headings font-semibold whitespace-nowrap"
             >CBVS</span
           >
         </a>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+
+        <!-- Icons (mobile + desktop) -->
+        <div class="flex items-center space-x-5 rtl:space-x-reverse md:order-3">
+          <a href="shopping_cart.html">
+            <img src="images/icons/shopping_cart.svg" class="h-6" alt="Cart" />
+          </a>
+          <a href="#">
+            <img src="images/icons/bell.svg" class="h-6" alt="Notifications" />
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-heading focus:ring-2 focus:ring-secondary font-medium leading-5 rounded-base focus:outline-none md:hidden"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nav links -->
+        <div
+          class="hidden w-full md:block md:w-auto md:order-2"
+          id="navbar-dropdown"
+        >
           <ul
-            class="flex flex-col font-medium p-4 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:mt-0 md:text-sm md:border-0 md:bg-neutral-primary md:space-x-8 md:rtl:space-x-reverse space-y-1"
+            class="flex flex-col font-medium p-4 mt-4 rounded-base bg-neutral-secondary-soft md:flex-row md:mt-0 md:text-sm md:border-0 md:bg-neutral-primary md:space-x-8 md:rtl:space-x-reverse space-y-1"
           >
             <li>
               <a
                 href="index.html"
-                class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0 md:text-fg-brand"
-                aria-current="page"
+                class="block py-2 px-3 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
                 >Home</a
               >
             </li>
+
+            <!-- Dropdown -->
             <li>
               <button
                 id="dropdownNavbarLink"
@@ -76,10 +120,10 @@
                   />
                 </svg>
               </button>
-              <!-- Dropdown menu -->
+
               <div
                 id="dropdownNavbar"
-                class="z-10 hidden bg-white border-gray-200 rounded-base shadow-lg w-44"
+                class="z-10 hidden bg-white border border-gray-200 rounded-base shadow-lg w-44"
               >
                 <ul
                   class="p-2 text-sm text-body font-medium"
@@ -116,42 +160,29 @@
                 </ul>
               </div>
             </li>
+
             <li>
               <a
                 href="testimonials.html"
-                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
                 >Testimonials</a
               >
             </li>
             <li>
               <a
                 href="our_story.html"
-                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
                 >Our Story</a
               >
             </li>
             <li>
               <a
                 href="contact_us.html"
-                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
                 >Contact Us</a
               >
             </li>
           </ul>
-        </div>
-        <div class="flex items-center space-x-6 rtl:space-x-reverse">
-          <a href="shopping_cart.html"
-            ><img
-              src="images/icons/shopping_cart.svg"
-              class="h-6"
-              alt="Add to Cart Icon"
-          /></a>
-          <a href="#"
-            ><img
-              src="images/icons/bell.svg"
-              class="h-6"
-              alt="Notification Icon"
-          /></a>
         </div>
       </div>
     </nav>
