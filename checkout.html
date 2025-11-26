@@ -12,9 +12,6 @@
         --color-bg-color: #f9f8f6;
         --color-primary: #1c4e7d;
         --color-secondary: #bd9461;
-
-        --font-title: "Montserrat", sans-serif;
-        --font-body: "Playfair Display", serif;
       }
     </style>
     <!-- Flowbite CSS -->
@@ -190,10 +187,13 @@
 
     <main class="max-w-7xl mx-auto px-6 py-12">
       <!-- Shopping process (Cart -> Checkout -> Order summary) -->
-      <nav aria-label="Shopping progress" class="max-w-4xl mx-auto px-6 py-8">
-        <ol class="flex items-center gap-4">
-          <li class="flex items-center gap-4 w-full">
-            <!-- circle -->
+      <div
+        aria-label="Shopping progress"
+        class="max-w-screen-xl mx-auto px-6 py-8"
+      >
+        <ol class="flex flex-col md:flex-row md:gap-6">
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
+            <!-- Cart Step -->
             <div class="flex items-center gap-4">
               <span
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-primary shadow-sm"
@@ -220,18 +220,21 @@
 
             <!-- connector -->
             <span
-              class="h-[1px] flex-1 bg-gray-200 mx-4"
+              class="block md:hidden w-px h-6 bg-gray-200 ml-[19px] mt-1"
+              aria-hidden="true"
+            ></span>
+
+            <span
+              class="hidden md:block h-[1px] flex-1 bg-gray-200 my-auto mx-4"
               aria-hidden="true"
             ></span>
           </li>
-
-          <li class="flex items-center gap-4 w-full">
-            <!-- circle -->
+          <!-- Checkout Step -->
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
             <div class="flex items-center gap-4">
               <span
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-primary ring-2 ring-primary/30"
               >
-                <!-- current step icon (filled check for consistency) -->
                 <svg
                   class="w-5 h-5"
                   viewBox="0 0 24 24"
@@ -250,27 +253,25 @@
               </span>
               <span class="text-lg font-medium text-primary">Checkout</span>
             </div>
-
-            <!-- connector -->
+            <!-- Connector -->
             <span
-              class="h-[1px] flex-1 bg-gray-200 mx-4"
+              class="block md:hidden w-px h-6 bg-gray-200 ml-[19px] mt-1"
+              aria-hidden="true"
+            ></span>
+
+            <span
+              class="hidden md:block h-[1px] flex-1 bg-gray-200 my-auto mx-4"
               aria-hidden="true"
             ></span>
           </li>
-
-          <li class="flex items-center gap-4 w-full">
+          <!-- Order Summary Step -->
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
             <div class="flex items-center gap-4">
               <span
-                class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-gray-400 ring-1 ring-gray-100"
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-gray-400 ring-1 ring-gray-100 flex-shrink-0"
+                aria-hidden="true"
               >
-                <!-- empty circle -->
-                <svg
-                  class="w-5 h-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
                   <circle
                     cx="12"
                     cy="12"
@@ -280,13 +281,15 @@
                   />
                 </svg>
               </span>
+
               <span class="text-lg font-medium text-gray-500"
                 >Order summary</span
               >
             </div>
           </li>
         </ol>
-      </nav>
+      </div>
+
       <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl mb-6">
         Checkout Payment
       </h2>
@@ -516,7 +519,7 @@
                 alt="CBVS Logo"
               />
               <span
-                class="font-title self-center text-xl text-headings font-semibold whitespace-nowrap"
+                class="self-center text-xl text-headings font-semibold whitespace-nowrap"
                 >CBVS</span
               >
             </a>

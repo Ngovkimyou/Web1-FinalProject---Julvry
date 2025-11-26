@@ -12,9 +12,6 @@
         --color-bg-color: #f9f8f6;
         --color-primary: #1c4e7d;
         --color-secondary: #bd9461;
-
-        --font-title: "Montserrat", sans-serif;
-        --font-body: "Playfair Display", serif;
       }
     </style>
     <!-- Flowbite CSS -->
@@ -219,11 +216,14 @@
         </div>
       </div>
 
-      <!-- Payment Process Nagivation -->
-      <nav aria-label="Shopping progress" class="max-w-4xl mx-auto px-6 py-8">
-        <ol class="flex items-center gap-4">
-          <li class="flex items-center gap-4 w-full">
-            <!-- circle -->
+      <!-- Shopping process (Cart -> Checkout -> Order summary) -->
+      <div
+        aria-label="Shopping progress"
+        class="max-w-screen-xl mx-auto px-6 py-8"
+      >
+        <ol class="flex flex-col md:flex-row md:gap-6">
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
+            <!-- Cart Step -->
             <div class="flex items-center gap-4">
               <span
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-primary shadow-sm"
@@ -245,50 +245,22 @@
                   />
                 </svg>
               </span>
-              <span class="text-lg font-medium text-gray-900">Cart</span>
+              <span class="text-lg font-medium text-primary">Cart</span>
             </div>
 
             <!-- connector -->
             <span
-              class="h-[1px] flex-1 bg-gray-200 mx-4"
+              class="block md:hidden w-px h-6 bg-gray-200 ml-[19px] mt-1"
               aria-hidden="true"
             ></span>
-          </li>
 
-          <li class="flex items-center gap-4 w-full">
-            <!-- circle -->
-            <div class="flex items-center gap-4">
-              <span
-                class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-primary shadow-sm"
-              >
-                <!-- checked circle icon -->
-                <svg
-                  class="w-5 h-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M20 6L9 17l-5-5"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <span class="text-lg font-medium text-gray-900">Checkout</span>
-            </div>
-
-            <!-- connector -->
             <span
-              class="h-[1px] flex-1 bg-gray-200 mx-4"
+              class="hidden md:block h-[1px] flex-1 bg-gray-200 my-auto mx-4"
               aria-hidden="true"
             ></span>
           </li>
-
-          <li class="flex items-center gap-4 w-full">
+          <!-- Checkout Step -->
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
             <div class="flex items-center gap-4">
               <span
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-primary shadow-sm"
@@ -310,13 +282,50 @@
                   />
                 </svg>
               </span>
-              <span class="text-lg font-medium text-gray-900"
+              <span class="text-lg font-medium text-primary">Checkout</span>
+            </div>
+            <!-- Connector -->
+            <span
+              class="block md:hidden w-px h-6 bg-gray-200 ml-[19px] mt-1"
+              aria-hidden="true"
+            ></span>
+
+            <span
+              class="hidden md:block h-[1px] flex-1 bg-gray-200 my-auto mx-4"
+              aria-hidden="true"
+            ></span>
+          </li>
+          <!-- Order Summary Step -->
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
+            <div class="flex items-center gap-4">
+              <span
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-primary shadow-sm"
+              >
+                <!-- checked circle icon -->
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span class="text-lg font-medium text-primary"
                 >Order summary</span
               >
             </div>
           </li>
         </ol>
-      </nav>
+      </div>
       <!-- Title -->
 
       <h1 class="text-3xl font-bold text-primary mb-6 text-center">
@@ -436,7 +445,7 @@
                 alt="CBVS Logo"
               />
               <span
-                class="font-title self-center text-xl text-headings font-semibold whitespace-nowrap"
+                class="images self-center text-xl text-headings font-semibold whitespace-nowrap"
                 >CBVS</span
               >
             </a>
